@@ -1,0 +1,49 @@
+import java.util.Scanner;
+
+public class UnitConverter {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        char choice;
+        do {
+            System.out.println("\nMenu based app - Unit conversion for Distance\n");
+            System.out.println("1. CM to M");
+            System.out.println("2. M to KM");
+            System.out.println("3. KM to M");
+            System.out.println("4. M to CM");
+            System.out.print("\nEnter your menu - ");
+            int menu = sc.nextInt();
+            
+            switch(menu) {
+                case 1:
+                    System.out.print("\nPlease enter the CM Value: ");
+                    int cm = sc.nextInt();
+                    double m = (double) cm / 100.0;
+                    System.out.println(cm + " CM = " + m + " M");
+                    break;
+                case 2:
+                    System.out.print("\nPlease enter the M Value: ");
+                    double meter = sc.nextDouble();
+                    double km = meter / 1000.0;
+                    System.out.println(meter + " M = " + km + " KM");
+                    break;
+                case 3:
+                    System.out.print("\nPlease enter the KM Value: ");
+                    double kmVal = sc.nextDouble();
+                    double meterVal = kmVal * 1000.0;
+                    System.out.println(kmVal + " KM = " + meterVal + " M");
+                    break;
+                case 4:
+                    System.out.print("\nPlease enter the M Value: ");
+                    double meters = sc.nextDouble();
+                    double cms = meters * 100.0;
+                    System.out.println(meters + " M = " + cms + " CM");
+                    break;
+                default:
+                    System.out.println("\nInvalid menu option!");
+            }
+            
+            System.out.print("\nDo you want to Continue: ");
+            choice = sc.next().charAt(0);
+        } while (choice == 'y' || choice == 'Y');
+    }
+}
